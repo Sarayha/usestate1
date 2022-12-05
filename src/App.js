@@ -24,10 +24,10 @@ function getReset(data){
   console.log(data)
   setReset(data)
 }
-function getMax(X){
-  //setMaximum( Number(X.target.value))
-  if(X > maximum) return X
-    return maximum
+function setMaximumNum(X){
+  if(X > maximum){
+    setMaximum(X)
+  }  
 }
 
   return (
@@ -37,8 +37,8 @@ function getMax(X){
       <h2>select the maximum number for the counter</h2>
       <input type="Number" value= {maxNum} onChange = {handleMaxNum}/>
       <h3>Maximum value {maximum}</h3>
-      <Counter delta={delta} maxNum={maxNum} getReset={getReset} needToReset = {reset} getMax = {getMax} maxValue = {maximum}/>
-      <Counter delta={delta} maxNum={maxNum} getReset={getReset} needToReset = {reset} getMax = {getMax} maxValue = {maximum}/>
+      <Counter delta={delta} maxNum={maxNum} getReset={getReset} needToReset = {reset} setMaximumNum ={setMaximumNum}/>
+      <Counter delta={delta} maxNum={maxNum} getReset={getReset} needToReset = {reset} setMaximumNum ={setMaximumNum}/>
 
 
     </div>
